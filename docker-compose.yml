@@ -1,0 +1,13 @@
+﻿services:
+  timezone:
+    image: timezone
+    build:
+      context: .
+      dockerfile: TimeZone/Dockerfile
+      target: watch
+    ports:
+      - 8000:80
+    volumes:
+      - ./TimeZone:/src
+      - ./TimeZone/bin:/src/bin
+      - ./TimeZone/obj:/src/obj
